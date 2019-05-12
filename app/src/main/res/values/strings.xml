@@ -1,0 +1,55 @@
+<resources>
+	<string name="app_name">Better Health</string>
+
+	<string name="title_fitness">Fitness</string>
+	<string name="title_drinking">Drinking</string>
+	<string name="title_smoking">Smoking</string>
+
+	<string name="title_weight_graph">Weight graph</string>
+
+	<string name="unit_kilograms">kilograms</string>
+	<string name="unit_steps">steps</string>
+	<string name="unit_calories">calories</string>
+	<string name="unit_units">units</string>
+	<string name="unit_cigarettes">cigarettes</string>
+	<string name="unit_days">days</string>
+
+	<string name="average_title_taken">On average you took</string>
+	<string name="average_title_consumed">On average you consumed</string>
+	<string name="average_title_drank">On average you drank</string>
+	<string name="average_title_smoked">On average you smoked</string>
+
+	<string name="this_day_title">This day</string>
+	<string name="this_week_title">This week</string>
+	<string name="this_month_title">This month</string>
+
+	<string name="daily_this_month_text">daily this month</string>
+	<string name="weekly_this_month_text">weekly this month</string>
+
+	<string name="since_last_text_drank">since you last drank</string>
+	<string name="since_last_text_smoked">since you last smoked</string>
+
+	<string name="unit_explanation">1 unit is roughly 1dl of beer</string>
+
+	<string name="add_weight_title">Add weight</string>
+	<string name="add_calories_title">Add calories</string>
+	<string name="add_drink_title">Add drink</string>
+	<string name="add_cigarettes_title">Add cigarettes</string>
+
+	<string name="weight_kg">Weight (kg)</string>
+	<string name="calories">Calories</string>
+	<string name="amount_dl">Amount (dl)</string>
+	<string name="alcohol_percentage">Alcohol percentage</string>
+	<string name="cigarette_count">Cigarette count</string>
+
+	<string name="add">Add</string>
+	<string name="cancel">Cancel</string>
+
+	<string name="steps_taken_today">Steps taken today</string>
+
+	<string name="start_step_counter">Start step counter</string>
+	<string name="stop_step_counter">Stop step counter</string>
+
+	<string name="step_counter_notification_title">Step counter is running</string>
+	<string name="step_counter_notification_text">Tap to open the app to turn it off</string>
+</resources>

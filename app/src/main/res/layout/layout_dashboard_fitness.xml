@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:clipChildren="false"
+	android:clipToPadding="false"
+	android:orientation="horizontal">
+
+	<LinearLayout
+		style="@style/Card"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:padding="@dimen/dashboard_card_padding">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Last 24 hours"
+			android:textColor="@color/color_accent"
+			android:textSize="16sp" />
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<TextView
+					android:id="@+id/dashboard_fitness_daily_calories"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/dashboard_card_spacing"
+					android:text="2.4k"
+					android:textSize="16sp" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/dashboard_card_spacing"
+					android:text="Calories"
+					android:textSize="16sp" />
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+
+				android:orientation="vertical">
+
+				<TextView
+					android:id="@+id/dashboard_fitness_daily_steps"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/dashboard_card_spacing"
+					android:text="3.6k"
+					android:textSize="16sp" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/dashboard_card_spacing"
+					android:text="Steps"
+					android:textSize="16sp" />
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<LinearLayout
+		style="@style/Card"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginStart="@dimen/home_screen_spacing"
+		android:orientation="vertical"
+		android:padding="@dimen/dashboard_card_padding">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Last 7 days"
+			android:textColor="@color/color_accent"
+			android:textSize="16sp" />
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/dashboard_card_spacing"
+			android:text="On average you consume 2000 calories a day and 19000 every week"
+			android:textSize="16sp" />
+
+	</LinearLayout>
+
+</LinearLayout>

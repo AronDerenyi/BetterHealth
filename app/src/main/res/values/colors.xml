@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="color_primary">#FFFFFF</color>
+	<color name="color_primary_dark">#F0F0F0</color>
+
+	<color name="color_accent">#43a047</color>
+	<color name="color_accent_dark">#388e3c</color>
+
+	<!-- Background -->
+	<color name="color_background">#FFFFFF</color>
+	<color name="color_background_light">#F4F4F4</color>
+	<color name="color_background_strong">#E8E8E8</color>
+	<color name="color_background_loading_overlay">#80FFFFFF</color>
+
+	<!-- Content -->
+	<color name="color_content">#202020</color>
+	<color name="color_content_light">#606060</color>
+	<color name="color_content_faded">#E0E0E0</color>
+	<color name="color_content_pop">#F8F8F8</color>
+
+	<!-- Controls -->
+	<color name="color_control">#43a047</color>
+	<color name="color_control_highlight">#3043a047</color>
+
+	<color name="color_control_pop">#FFFFFF</color>
+	<color name="color_control_highlight_pop">#80FFFFFF</color>
+
+	<color name="color_control_inactive">#808080</color>
+
+	<color name="color_shadow">#50000000</color>
+
+</resources>

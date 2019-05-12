@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="Card">
+		<item name="android:background">@drawable/background_card</item>
+		<item name="android:outlineAmbientShadowColor">@color/color_shadow</item>
+		<item name="android:outlineSpotShadowColor">@color/color_shadow</item>
+		<item name="android:elevation">8dp</item>
+	</style>
+
+</resources>

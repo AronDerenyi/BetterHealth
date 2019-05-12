@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+
+		<variable
+			name="amount"
+			type="java.lang.Integer" />
+
+		<variable
+			name="unit"
+			type="java.lang.String" />
+
+		<variable
+			name="text"
+			type="java.lang.String" />
+
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		style="@style/Card"
+		android:padding="@dimen/dashboard_card_padding"
+		tools:layout_height="wrap_content"
+		tools:layout_width="match_parent">
+
+		<TextView
+			android:id="@+id/dashboard_card_large_amount"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@{amount.toString()}"
+			android:textColor="@color/color_accent"
+			android:textSize="32sp"
+			app:layout_constraintEnd_toStartOf="@id/dashboard_card_large_unit"
+			app:layout_constraintHorizontal_chainStyle="packed"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:text="23" />
+
+		<TextView
+			android:id="@+id/dashboard_card_large_unit"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:text="@{unit}"
+			android:textSize="24sp"
+			app:layout_constraintBaseline_toBaselineOf="@id/dashboard_card_large_amount"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@id/dashboard_card_large_amount"
+			tools:text="days" />
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@{text}"
+			android:textAlignment="center"
+			android:textColor="@color/color_content_light"
+			android:textSize="16sp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/dashboard_card_large_amount"
+			tools:text="since you last smoked" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<data>
+
+		<import type="android.view.View" />
+
+		<import type="com.madebyaron.betterhealth.view.list.ListFragment" />
+
+		<import type="com.madebyaron.betterhealth.viewmodel.ListModel" />
+
+		<variable
+			name="fragment"
+			type="ListFragment" />
+
+		<variable
+			name="model"
+			type="ListModel" />
+
+	</data>
+
+	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+		android:id="@+id/list_swipe_refresh"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@drawable/background_gradient">
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/list_recycler_view"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:clipChildren="false"
+				android:clipToPadding="false"
+				android:padding="@dimen/list_padding" />
+
+			<com.google.android.material.floatingactionbutton.FloatingActionButton
+				android:id="@+id/list_add_button"
+				style="@style/FloatingActionButton"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="@dimen/list_add_button_margin"
+				android:onClick="@{() -> fragment.add()}"
+				android:src="@drawable/ic_add_24px"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent" />
+
+			<com.google.android.material.floatingactionbutton.FloatingActionButton
+				android:id="@+id/list_add_weight_button"
+				style="@style/FloatingActionButton.Light"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/list_add_button_spacing"
+				android:onClick="@{() -> fragment.addWeight()}"
+				android:src="@drawable/ic_weight_24px"
+				android:visibility="invisible"
+				app:fabSize="mini"
+				app:layout_constraintBottom_toTopOf="@id/list_add_button"
+				app:layout_constraintEnd_toEndOf="@id/list_add_button"
+				app:layout_constraintStart_toStartOf="@id/list_add_button" />
+
+			<com.google.android.material.floatingactionbutton.FloatingActionButton
+				android:id="@+id/list_add_calories_button"
+				style="@style/FloatingActionButton.Light"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/list_add_button_spacing"
+				android:onClick="@{() -> fragment.addCalories()}"
+				android:src="@drawable/ic_food_24px"
+				android:visibility="invisible"
+				app:fabSize="mini"
+				app:layout_constraintBottom_toTopOf="@id/list_add_weight_button"
+				app:layout_constraintEnd_toEndOf="@id/list_add_button"
+				app:layout_constraintStart_toStartOf="@id/list_add_button" />
+
+			<com.google.android.material.floatingactionbutton.FloatingActionButton
+				android:id="@+id/list_add_drink_button"
+				style="@style/FloatingActionButton.Light"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/list_add_button_spacing"
+				android:onClick="@{() -> fragment.addDrink()}"
+				android:src="@drawable/ic_drink_24px"
+				android:visibility="invisible"
+				app:fabSize="mini"
+				app:layout_constraintBottom_toTopOf="@id/list_add_calories_button"
+				app:layout_constraintEnd_toEndOf="@id/list_add_button"
+				app:layout_constraintStart_toStartOf="@id/list_add_button" />
+
+			<com.google.android.material.floatingactionbutton.FloatingActionButton
+				android:id="@+id/list_add_cigarettes_button"
+				style="@style/FloatingActionButton.Light"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/list_add_button_spacing"
+				android:onClick="@{() -> fragment.addCigarettes()}"
+				android:src="@drawable/ic_cigarette_24px"
+				android:visibility="invisible"
+				app:fabSize="mini"
+				app:layout_constraintBottom_toTopOf="@id/list_add_drink_button"
+				app:layout_constraintEnd_toEndOf="@id/list_add_button"
+				app:layout_constraintStart_toStartOf="@id/list_add_button" />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	style="@style/Card"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="@dimen/list_item_margin"
+	android:orientation="vertical"
+	android:padding="@dimen/list_item_padding">
+
+	<FrameLayout
+		android:id="@+id/list_item_icon"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<ImageView
+			android:id="@+id/list_item_icon_weight"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_weight_24px"
+			android:tint="@color/color_accent"
+			tools:ignore="ContentDescription" />
+
+		<ImageView
+			android:id="@+id/list_item_icon_calories"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_food_24px"
+			android:tint="@color/color_accent"
+			tools:ignore="ContentDescription" />
+
+		<ImageView
+			android:id="@+id/list_item_icon_drink"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_drink_24px"
+			android:tint="@color/color_accent"
+			tools:ignore="ContentDescription" />
+
+		<ImageView
+			android:id="@+id/list_item_icon_cigarettes"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_cigarette_24px"
+			android:tint="@color/color_accent"
+			tools:ignore="ContentDescription" />
+
+	</FrameLayout>
+
+	<TextView
+		android:id="@+id/list_item_amount"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/list_item_spacing"
+		android:textColor="@color/color_accent"
+		android:textSize="20sp"
+		app:layout_constraintBottom_toTopOf="@id/list_item_date"
+		app:layout_constraintEnd_toStartOf="@id/list_item_unit"
+		app:layout_constraintHorizontal_bias="0"
+		app:layout_constraintHorizontal_chainStyle="packed"
+		app:layout_constraintStart_toEndOf="@id/list_item_icon"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="1200" />
+
+	<TextView
+		android:id="@+id/list_item_unit"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="4dp"
+		android:textSize="16sp"
+		app:layout_constraintBaseline_toBaselineOf="@id/list_item_amount"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@id/list_item_amount"
+		tools:text="calories" />
+
+	<TextView
+		android:id="@+id/list_item_date"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/list_item_spacing"
+		android:textColor="@color/color_content_light"
+		android:textSize="12sp"
+		app:layout_constraintHorizontal_bias="0"
+		app:layout_constraintStart_toEndOf="@id/list_item_icon"
+		app:layout_constraintTop_toBottomOf="@id/list_item_amount"
+		tools:text="Wed, 02 May, 2019" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

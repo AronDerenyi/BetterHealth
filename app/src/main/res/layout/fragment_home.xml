@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+	<data>
+
+		<import type="android.view.View" />
+
+		<import type="com.madebyaron.betterhealth.viewmodel.HomeModel" />
+
+		<variable
+			name="model"
+			type="HomeModel" />
+
+	</data>
+
+	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+		android:id="@+id/home_swipe_refresh"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@drawable/background_gradient">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:clipChildren="false"
+				android:clipToPadding="false"
+				android:gravity="center"
+				android:orientation="vertical"
+				android:padding="@dimen/home_screen_padding">
+
+				<!-- FITNESS -->
+
+				<TextView
+					android:id="@+id/dashboard_calories_title"
+					style="@style/DashboardTitle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/title_fitness" />
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/home_screen_spacing"
+					android:orientation="horizontal"
+					android:weightSum="1">
+
+					<include
+						layout="@layout/layout_dashboard_card_small"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="0.5"
+						bind:amount="@{model.stepsThisDay}"
+						bind:title="@{@string/this_day_title}"
+						bind:unit="@{@string/unit_steps}" />
+
+					<View
+						android:layout_width="@dimen/home_screen_spacing"
+						android:layout_height="0dp" />
+
+					<include
+						layout="@layout/layout_dashboard_card_small"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="0.5"
+						bind:amount="@{model.stepsThisWeek}"
+						bind:title="@{@string/this_week_title}"
+						bind:unit="@{@string/unit_steps}" />
+
+				</LinearLayout>
+
+				<include
+					layout="@layout/layout_dashboard_card_normal"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/home_screen_spacing"
+					bind:amount="@{model.stepsDailyAverage}"
+					bind:text="@{@string/daily_this_month_text}"
+					bind:title="@{@string/average_title_taken}"
+					bind:unit="@{@string/unit_steps}" />
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/home_screen_spacing"
+					android:orientation="horizontal"
+					android:weightSum="1">
+
+					<include
+						layout="@layout/layout_dashboard_card_small"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="0.5"
+						bind:amount="@{model.caloriesThisDay}"
+						bind:title="@{@string/this_day_title}"
+						bind:unit="@{@string/unit_calories}" />
+
+					<View
+						android:layout_width="@dimen/home_screen_spacing"
+						android:layout_height="0dp" />
+
+					<include
+						layout="@layout/layout_dashboard_card_small"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="0.5"
+						bind:amount="@{model.caloriesThisWeek}"
+						bind:title="@{@string/this_week_title}"
+						bind:unit="@{@string/unit_calories}" />
+
+				</LinearLayout>
+
+				<include
+					layout="@layout/layout_dashboard_card_normal"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/home_screen_spacing"
+					bind:amount="@{model.caloriesDailyAverage}"
+					bind:text="@{@string/daily_this_month_text}"
+					bind:title="@{@string/average_title_consumed}"
+					bind:unit="@{@string/unit_calories}" />
+
+				<LinearLayout
+					style="@style/Card"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/home_screen_spacing"
+					android:clipChildren="false"
+					android:clipToPadding="false"
+					android:gravity="center"
+					android:orientation="vertical"
+					android:padding="@dimen/dashboard_card_padding">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/title_weight_graph"
+						android:textColor="@color/color_accent"
+						android:textSize="16sp" />
+
+					<com.madebyaron.betterhealth.view.components.GraphView
+						android:id="@+id/dashboard_weight_graph"
+						android:layout_width="match_parent"
+						android:layout_height="240dp"
+						android:layout_marginTop="@dimen/dashboard_card_spacing" />
+
+				</LinearLayout>
+
+				<!-- DRINKING -->
+
+				<TextView
+					style="@style/DashboardTitle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/dashboard_title_margin"
+					android:text="@string/title_drinking" />
+
+				<include
+					layout="@layout/layout_dashboard_card_large"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/home_screen_spacing"
+					bind:amount='@{model.daysSinceDrank}'
+					bind:text="@{@string/since_last_text_drank}"
+					bind:unit="@{@string/unit_days}" />
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/home_screen_spacing"
+					android:orientation="horizontal"
+					android:weightSum="1">
+
+					<include
+						layout="@layout/layout_dashboard_card_small"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="0.5"
+						bind:amount="@{model.unitsThisWeek}"
+						bind:title="@{@string/this_week_title}"
+						bind:unit="@{@string/unit_units}" />
+
+					<View
+						android:layout_width="@dimen/home_screen_spacing"
+						android:layout_height="0dp" />
+
+					<include
+						layout="@layout/layout_dashboard_card_small"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="0.5"
+						bind:amount="@{model.unitsThisMonth}"
+						bind:title="@{@string/this_month_title}"
+						bind:unit="@{@string/unit_units}" />
+
+				</LinearLayout>
+
+				<include
+					layout="@layout/layout_dashboard_card_normal"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/home_screen_spacing"
+					bind:amount="@{model.unitsWeeklyAverage}"
+					bind:text="@{@string/weekly_this_month_text}"
+					bind:title="@{@string/average_title_drank}"
+					bind:unit="@{@string/unit_units}" />
+
+				<TextView
+					style="@style/Card"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/home_screen_spacing"
+					android:padding="@dimen/dashboard_card_padding"
+					android:text="@string/unit_explanation"
+					android:textAlignment="center"
+					android:textColor="@color/color_content_light"
+					android:textSize="16sp" />
+
+				<!-- SMOKING -->
+
+				<TextView
+					style="@style/DashboardTitle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/dashboard_title_margin"
+					android:text="@string/title_smoking" />
+
+				<include
+					layout="@layout/layout_dashboard_card_large"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/home_screen_spacing"
+					bind:amount="@{model.daysSinceSmoked}"
+					bind:text="@{@string/since_last_text_smoked}"
+					bind:unit="@{@string/unit_days}" />
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/home_screen_spacing"
+					android:orientation="horizontal"
+					android:weightSum="1">
+
+					<include
+						layout="@layout/layout_dashboard_card_small"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="0.5"
+						bind:amount="@{model.cigarettesThisWeek}"
+						bind:title="@{@string/this_week_title}"
+						bind:unit="@{@string/unit_cigarettes}" />
+
+					<View
+						android:layout_width="@dimen/home_screen_spacing"
+						android:layout_height="0dp" />
+
+					<include
+						layout="@layout/layout_dashboard_card_small"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="0.5"
+						bind:amount="@{model.cigarettesThisMonth}"
+						bind:title="@{@string/this_month_title}"
+						bind:unit="@{@string/unit_cigarettes}" />
+
+				</LinearLayout>
+
+				<include
+					layout="@layout/layout_dashboard_card_normal"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/home_screen_spacing"
+					bind:amount="@{model.cigarettesWeeklyAverage}"
+					bind:text="@{@string/weekly_this_month_text}"
+					bind:title="@{@string/average_title_smoked}"
+					bind:unit="@{@string/unit_cigarettes}" />
+
+			</LinearLayout>
+
+		</ScrollView>
+
+	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

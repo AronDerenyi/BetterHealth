@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	style="@style/Card"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="@dimen/add_dialog_width"
+		android:layout_height="wrap_content"
+		android:clipToPadding="false"
+		android:orientation="vertical"
+		android:padding="@dimen/add_dialog_padding">
+
+		<TextView
+			android:id="@+id/add_weight_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/add_weight_title"
+			android:textSize="20sp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/add_weight_date"
+			style="@style/OutlinedTextInput"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/add_dialog_spacing"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/add_weight_title"
+			app:startIconDrawable="@drawable/ic_date_range_24px">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/add_weight_date_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:focusable="false"
+				android:inputType="none"
+				android:longClickable="false" />
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/add_weight_weight"
+			style="@style/OutlinedTextInput"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/add_dialog_spacing"
+			android:hint="@string/weight_kg"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/add_weight_date">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/add_weight_weight_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:inputType="numberDecimal" />
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/add_weight_add_button"
+			style="@style/FlatButton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/add_dialog_spacing"
+			android:text="@string/add"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/add_weight_weight" />
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/add_weight_cancel_button"
+			style="@style/FlatButton.Light"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="@dimen/add_dialog_spacing"
+			android:text="@string/cancel"
+			app:layout_constraintEnd_toStartOf="@id/add_weight_add_button"
+			app:layout_constraintTop_toTopOf="@id/add_weight_add_button" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
