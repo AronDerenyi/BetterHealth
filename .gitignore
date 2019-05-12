@@ -20,6 +20,9 @@
 .idea/encodings.xml
 .idea/shelf
 
+# Android
+private_key.pepk
+
 # CI
 .scannerwork
 reports
