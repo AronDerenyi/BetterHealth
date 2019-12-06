@@ -1,14 +1,15 @@
-package com.madebyaron.betterhealth.data
+package com.madebyaron.betterhealth.database
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.os.AsyncTask
+import com.madebyaron.betterhealth.model.Data
 import java.util.*
 import kotlin.collections.ArrayList
 
-class DataApi(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class DataDB(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
 	companion object {
 		private const val DATABASE_NAME = "betterhealth_data"
@@ -112,12 +113,14 @@ class DataApi(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null,
 
 			val dataList: MutableList<Data> = ArrayList(cursor.count)
 			while (cursor.moveToNext()) {
-				dataList.add(Data(
+				dataList.add(
+					Data(
 						cursor.getInt(cursor.getColumnIndex(COLUMN_DATA_ID)),
 						cursor.getInt(cursor.getColumnIndex(COLUMN_DATA_TYPE)),
 						Date(cursor.getLong(cursor.getColumnIndex(COLUMN_DATA_DATE))),
 						cursor.getFloat(cursor.getColumnIndex(COLUMN_DATA_AMOUNT))
-				))
+					)
+				)
 			}
 
 			cursor.close()
@@ -145,10 +148,10 @@ class DataApi(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null,
 
 			cursor.moveToNext()
 			val data = Data(
-					cursor.getInt(cursor.getColumnIndex(COLUMN_DATA_ID)),
-					cursor.getInt(cursor.getColumnIndex(COLUMN_DATA_TYPE)),
-					Date(cursor.getLong(cursor.getColumnIndex(COLUMN_DATA_DATE))),
-					cursor.getFloat(cursor.getColumnIndex(COLUMN_DATA_AMOUNT))
+				cursor.getInt(cursor.getColumnIndex(COLUMN_DATA_ID)),
+				cursor.getInt(cursor.getColumnIndex(COLUMN_DATA_TYPE)),
+				Date(cursor.getLong(cursor.getColumnIndex(COLUMN_DATA_DATE))),
+				cursor.getFloat(cursor.getColumnIndex(COLUMN_DATA_AMOUNT))
 			)
 			cursor.close()
 

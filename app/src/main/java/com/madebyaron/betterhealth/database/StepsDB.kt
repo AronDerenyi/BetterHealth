@@ -1,4 +1,4 @@
-package com.madebyaron.betterhealth.stepcounter
+package com.madebyaron.betterhealth.database
 
 import android.content.ContentValues
 import android.content.Context
@@ -6,10 +6,11 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.os.AsyncTask
 import java.util.*
-import java.util.concurrent.TimeUnit
-import kotlin.collections.ArrayList
 
-class StepsApi(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class StepsDB(context: Context) : SQLiteOpenHelper(context,
+	DATABASE_NAME, null,
+	DATABASE_VERSION
+) {
 
 	companion object {
 		private const val DATABASE_NAME = "betterhealth_steps"
@@ -37,11 +38,21 @@ class StepsApi(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
 	}
 
 	fun addSteps(date: Date, count: Int, callback: () -> Unit) {
-		AddStepsTask(writableDatabase, date, count, callback).execute()
+		AddStepsTask(
+			writableDatabase,
+			date,
+			count,
+			callback
+		).execute()
 	}
 
 	fun getStepCount(from: Date, to: Date, callback: (Int) -> Unit) {
-		GetStepCountTask(writableDatabase, from, to, callback).execute()
+		GetStepCountTask(
+			writableDatabase,
+			from,
+			to,
+			callback
+		).execute()
 	}
 
 	private class AddStepsTask(
@@ -72,7 +83,8 @@ class StepsApi(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
 			AsyncTask<Unit, Unit, Int>() {
 
 		override fun doInBackground(vararg params: Unit?): Int {
-			val cursor = db.query(TABLE_STEPS,
+			val cursor = db.query(
+				TABLE_STEPS,
 					arrayOf("SUM($COLUMN_STEPS_COUNT)"),
 					"""
 						${from.time} <= $COLUMN_STEPS_DATE AND

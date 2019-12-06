@@ -1,4 +1,4 @@
-package com.madebyaron.betterhealth.data
+package com.madebyaron.betterhealth.model
 
 import java.util.*
 

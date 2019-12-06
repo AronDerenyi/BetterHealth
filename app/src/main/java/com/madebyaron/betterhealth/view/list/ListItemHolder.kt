@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import com.madebyaron.betterhealth.R
-import com.madebyaron.betterhealth.data.Data
+import com.madebyaron.betterhealth.model.Data
 import com.madebyaron.betterhealth.viewmodel.ListModel
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat

@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.madebyaron.betterhealth.R
-import com.madebyaron.betterhealth.data.Data
+import com.madebyaron.betterhealth.model.Data
 import com.madebyaron.betterhealth.databinding.FragmentListBinding
 import com.madebyaron.betterhealth.view.list.dialogs.AddCaloriesDialog
 import com.madebyaron.betterhealth.view.list.dialogs.AddCigarettesDialog

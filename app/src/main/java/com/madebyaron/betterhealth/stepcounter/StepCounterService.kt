@@ -8,11 +8,11 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.Build
 import android.os.IBinder
-import android.util.Log
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.madebyaron.betterhealth.R
+import com.madebyaron.betterhealth.database.StepsDB
 import com.madebyaron.betterhealth.view.MainActivity
 import java.util.*
 import kotlin.collections.HashSet
@@ -40,7 +40,7 @@ class StepCounterService : Service(), SensorEventListener {
 			}
 	}
 
-	private lateinit var stepsApi: StepsApi
+	private lateinit var stepsDB: StepsDB
 	private lateinit var sensorManager: SensorManager
 	private lateinit var notificationManager: NotificationManager
 
@@ -54,7 +54,7 @@ class StepCounterService : Service(), SensorEventListener {
 	override fun onCreate() {
 		super.onCreate()
 
-		stepsApi = StepsApi(this)
+		stepsDB = StepsDB(this)
 		sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
 		notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
 
@@ -117,7 +117,7 @@ class StepCounterService : Service(), SensorEventListener {
 		val now = Date()
 		if (saveIntervalMillis < now.time - lastSave.time) {
 			lastSave = now
-			stepsApi.addSteps(now, accumulatedSteps) {}
+			stepsDB.addSteps(now, accumulatedSteps) {}
 			accumulatedSteps = 0
 		}
 	}

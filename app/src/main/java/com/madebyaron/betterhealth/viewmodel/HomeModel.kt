@@ -4,9 +4,9 @@ import android.app.Application
 import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.madebyaron.betterhealth.data.Data
-import com.madebyaron.betterhealth.data.DataApi
-import com.madebyaron.betterhealth.stepcounter.StepsApi
+import com.madebyaron.betterhealth.model.Data
+import com.madebyaron.betterhealth.database.DataDB
+import com.madebyaron.betterhealth.database.StepsDB
 import java.util.*
 import java.util.concurrent.TimeUnit
 import kotlin.collections.ArrayList
@@ -17,8 +17,8 @@ class HomeModel(application: Application) : AndroidViewModel(application) {
 	private val context: Context
 		get() = getApplication()
 
-	private val stepsApi = StepsApi(context)
-	private val dataApi = DataApi(context)
+	private val stepsApi = StepsDB(context)
+	private val dataApi = DataDB(context)
 
 	private var loadingCount: Int = 0
 	val loading = MutableLiveData<Boolean>()

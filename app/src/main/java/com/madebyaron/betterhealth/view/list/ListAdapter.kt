@@ -1,13 +1,12 @@
 package com.madebyaron.betterhealth.view.list
 
-import android.content.ClipData
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.madebyaron.betterhealth.R
-import com.madebyaron.betterhealth.data.Data
+import com.madebyaron.betterhealth.model.Data
 
 class ListAdapter(private val activity: FragmentActivity) : RecyclerView.Adapter<ListItemHolder>() {
 

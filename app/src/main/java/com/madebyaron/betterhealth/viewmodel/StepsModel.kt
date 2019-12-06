@@ -6,7 +6,7 @@ import android.content.Intent
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.madebyaron.betterhealth.stepcounter.StepCounterService
-import com.madebyaron.betterhealth.stepcounter.StepsApi
+import com.madebyaron.betterhealth.database.StepsDB
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -15,7 +15,7 @@ class StepsModel(application: Application) : AndroidViewModel(application) {
 	private val context: Context
 		get() = getApplication()
 
-	private val stepsApi = StepsApi(context)
+	private val stepsApi = StepsDB(context)
 
 	private val refreshInterval = 1000L
 	private var refreshTimer: Timer? = null

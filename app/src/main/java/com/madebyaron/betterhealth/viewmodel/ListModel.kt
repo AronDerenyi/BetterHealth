@@ -4,8 +4,8 @@ import android.app.Application
 import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.madebyaron.betterhealth.data.Data
-import com.madebyaron.betterhealth.data.DataApi
+import com.madebyaron.betterhealth.model.Data
+import com.madebyaron.betterhealth.database.DataDB
 import java.util.*
 
 class ListModel(application: Application) : AndroidViewModel(application) {
@@ -13,7 +13,7 @@ class ListModel(application: Application) : AndroidViewModel(application) {
 	private val context: Context
 		get() = getApplication()
 
-	private val dataApi = DataApi(context)
+	private val dataApi = DataDB(context)
 
 	val loading = MutableLiveData<Boolean>()
 	val dataList = MutableLiveData<List<Data>>()
