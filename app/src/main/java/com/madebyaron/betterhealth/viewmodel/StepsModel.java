@@ -17,9 +17,9 @@ public class StepsModel extends AndroidViewModel {
 	private long refreshInterval = 1000L;
 	private Timer refreshTimer = null;
 
-	public MutableLiveData<String> steps = new MutableLiveData<>();
-	public MutableLiveData<Boolean> showStartButton = new MutableLiveData<>();
-	public MutableLiveData<Boolean> showStopButton = new MutableLiveData<>();
+	public final MutableLiveData<String> steps = new MutableLiveData<>();
+	public final MutableLiveData<Boolean> showStartButton = new MutableLiveData<>();
+	public final MutableLiveData<Boolean> showStopButton = new MutableLiveData<>();
 
 	public StepsModel(Application application) {
 		super(application);
