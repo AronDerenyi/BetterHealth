@@ -7,8 +7,7 @@ import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
 import com.madebyaron.betterhealth.R
-import com.madebyaron.betterhealth.view.components.openDateTimePickerDialog
-import com.madebyaron.betterhealth.view.components.setDateTimePickerText
+import com.madebyaron.betterhealth.view.components.DateTimePicker
 import com.madebyaron.betterhealth.viewmodel.ListModel
 import kotlinx.android.synthetic.main.dialog_add_drink.*
 import java.util.*
@@ -23,11 +22,11 @@ class AddDrinkDialog(private val activity: FragmentActivity) : Dialog(activity) 
 		val model = ViewModelProviders.of(activity).get(ListModel::class.java)
 		var date = Date()
 
-		setDateTimePickerText(add_drink_date_input, date)
+		DateTimePicker.setDateTimePickerText(add_drink_date_input, date)
 		add_drink_date_input.setOnClickListener {
-			openDateTimePickerDialog(context, date) { dateTime ->
+			DateTimePicker.openDateTimePickerDialog(context, date) { dateTime ->
 				date = dateTime
-				setDateTimePickerText(add_drink_date_input, date)
+				DateTimePicker.setDateTimePickerText(add_drink_date_input, date)
 			}
 		}
 
