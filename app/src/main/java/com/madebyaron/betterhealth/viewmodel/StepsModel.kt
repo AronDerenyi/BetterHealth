@@ -25,7 +25,7 @@ class StepsModel(application: Application) : AndroidViewModel(application) {
 	val showStopButton = MutableLiveData<Boolean>()
 
 	init {
-		onServiceRunning(StepCounterService.running)
+		onServiceRunning(StepCounterService.isRunning())
 		StepCounterService.addRunningListener(this::onServiceRunning)
 	}
 

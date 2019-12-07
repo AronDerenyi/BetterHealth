@@ -95,7 +95,7 @@ public class StepsDB extends SQLiteOpenHelper {
         @Override
         protected Integer doInBackground(Void... voids) {
             Cursor cursor = db.query(TABLE_STEPS,
-                    new String[]{"SUM($COLUMN_STEPS_COUNT)" },
+                    new String[]{"SUM(" + COLUMN_STEPS_COUNT + ")" },
                     from.getTime() + " <= " + COLUMN_STEPS_DATE + " AND " +
                             COLUMN_STEPS_DATE + " <= " + to.getTime(),
                     null, null, null, null
